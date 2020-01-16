@@ -1,5 +1,5 @@
 PLUGIN_VERSION=0.4.0
-PLUGIN_ID=get-us-census-block
+PLUGIN_ID=get-us-census-block-fcc
 
 plugin:
 	cat plugin.json|json_pp > /dev/null
