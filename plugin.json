@@ -1,9 +1,9 @@
 {
-	"id" : "get-us-census-block",
+	"id" : "get-us-census-block-fcc",
 	"version" : "0.4.0",
 	"meta" : {
-		"label" : "Get US census block",
-		"description" : "Get an US Census block group from the US Census API",
+		"label" : "Get US census block FCC",
+		"description" : "Get an US Census block group from the US Census API FCC",
 		"author" : "Dataiku (Nicolas GAKRELIDZ)",
 		"icon" : "icon-location-arrow",
 		"licenseInfo" : "Apache Software License",
