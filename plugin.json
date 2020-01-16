@@ -4,10 +4,10 @@
 	"meta" : {
 		"label" : "Get US census block FCC",
 		"description" : "Get an US Census block group from the US Census API FCC",
-		"author" : "Dataiku (Nicolas GAKRELIDZ)",
+		"author" : "Subodh Gupta",
 		"icon" : "icon-location-arrow",
 		"licenseInfo" : "Apache Software License",
-		"url": "https://www.dataiku.com/dss/plugins/info/get-us-block.html",
+		"url": "https://www.linkedin.com/in/subodhgupta/",
 		"tags": ["Enrichment", "Open Data"]
 	}
 }
