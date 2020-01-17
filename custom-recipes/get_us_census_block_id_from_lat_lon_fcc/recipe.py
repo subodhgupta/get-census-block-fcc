@@ -49,6 +49,7 @@ schema = [
 P_PAUSE = int(get_recipe_config()['param_api_throttle'])
 P_LAT = get_recipe_config()['p_col_lat']
 P_LON = get_recipe_config()['p_col_lon']
+P_CALL_COUNT = 0
 
 P_BENCHMARK = get_recipe_config()['p_benchmark']
 P_VINTAGE = get_recipe_config()['p_vintage']
@@ -128,8 +129,8 @@ with output_dataset.get_writer() as writer:
             url = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates?' + params
             # print '%s - processing: (%s,%s,%s)' % (n_record,lat, lon, url)
             
-            call_count = 0
-            for call_count in range(0, 3):
+            
+            for P_CALL_COUNT in range(0, 4):
                 call = requests.get(url, verify=False)
                 print '%s - processing: (%s,%s,%s)' % (n_record, lat, lon, call.status_code)
                 if call.status_code == 200:
@@ -199,6 +200,6 @@ with output_dataset.get_writer() as writer:
                         print 'Unable to find these coordinates in the US Census API: Record #:%s, lat:%s, lon:%s, url:%s' % (
                             n_record, lat, lon, url)
                 else:
-                    time.sleep(1)
+                    time.sleep(P_CALL_COUNT*0.500)
             # call = requests.get(url, verify=False)
             time.sleep(P_PAUSE)
