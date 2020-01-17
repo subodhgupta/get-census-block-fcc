@@ -114,17 +114,19 @@ with output_dataset.get_writer() as writer:
             #      'layers': '10'
             #      }
             
-            #Encode parameters 
+            # Encode parameters
             params = urllib.urlencode(
-                                        {'format': 'json',
-                                         'y': lat,
-                                         'x': lon,
-                                         'benchmark': P_BENCHMARK,
-                                         'vintage': P_VINTAGE
-                                         }
-                                     )
-            #Contruct request URL
-            url = 'https://geo.fcc.gov/api/census/block/find?' + params
+                {'format': 'json',
+                 'y': lat,
+                 'x': lon,
+                 'benchmark': P_BENCHMARK,
+                 'vintage': P_VINTAGE,
+                 'layers': '1'
+                 }
+            )
+            # Contruct request URL
+            url = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates?' + params
+            # print '%s - processing: (%s,%s,%s)' % (n_record,lat, lon, url)
             
             call_count = 0
             for call_count in range(0, 3):
