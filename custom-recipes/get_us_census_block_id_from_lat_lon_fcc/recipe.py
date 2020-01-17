@@ -105,7 +105,7 @@ with output_dataset.get_writer() as writer:
             if use_column_id:
                 id_ = v[id_column]
 
-            print '%s - processing: (%s,%s)' % (n_record,lat, lon)
+            # print '%s - processing: (%s,%s)' % (n_record,lat, lon)
             
             # p = {'format': 'json',
             #      'y': lat,
@@ -132,7 +132,7 @@ with output_dataset.get_writer() as writer:
             
             for P_CALL_COUNT in range(0, 4):
                 call = requests.get(url, verify=False)
-                print '%s - processing: (%s,%s,%s)' % (n_record, lat, lon, call.status_code)
+                # print '%s - processing: (%s,%s,%s)' % (n_record, lat, lon, call.status_code)
                 if call.status_code == 200:
                     data = call.json()
                     try:
